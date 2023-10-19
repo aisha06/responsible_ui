@@ -12,7 +12,7 @@ class GridViewscreen extends StatelessWidget {
         shrinkWrap: true,
         itemCount: 4,
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
+            maxCrossAxisExtent: 210,
             childAspectRatio: 3 / 2,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20),

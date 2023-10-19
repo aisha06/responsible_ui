@@ -1,26 +1,13 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class ResponsiveUi extends StatelessWidget {
-  final Widget destop;
-  final Widget teblet;
-  final Widget mobile;
+class Responsive {
+  static bool isMobile(BuildContext context) =>
+      MediaQuery.of(context).size.width < 850;
 
-  const ResponsiveUi(
-      {super.key,
-      required this.destop,
-      required this.teblet,
-      required this.mobile});
+  static bool isTablet(BuildContext context) =>
+      MediaQuery.of(context).size.width < 1100 &&
+      MediaQuery.of(context).size.width >= 850;
 
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (BuildContext context, constarints) {
-      if (constarints.maxWidth < 550) {
-        return mobile;
-      } else if (constarints.maxWidth < 1100 &&constarints.maxWidth > 550) {
-        return teblet;
-      } else {
-        return destop;
-      }
-    });
-  }
+  static bool isDesktop(BuildContext context) =>
+      MediaQuery.of(context).size.width >= 1100;
 }
